@@ -1,0 +1,3 @@
+".\Objects\Problem_Statement_4(1).obj" 
+TO ".\Objects\Read_and_Display" 
+PRINT(".\Listings\Read_and_Display.m51") RAMSIZE(256) 

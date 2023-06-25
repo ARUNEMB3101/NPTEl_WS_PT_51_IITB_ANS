@@ -1,0 +1,78 @@
+A51 MACRO ASSEMBLER  MULTIPLY_AND_MANIPULATE                                              06/12/2023 10:06:45 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Multiply_and_Manipulate.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Multiply_and_Manipulate.a51 SET(SMALL) DEBUG PRINT(.\Listings\Multiply_
+                      and_Manipulate.lst) OBJECT(.\Objects\Multiply_and_Manipulate.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00H
+0000 020100            2             LJMP MAIN
+0100                   3             ORG 100H
+0100                   4                     MAIN:
+0100 3130              5                     ACALL GET_INPUT
+0102 3153              6                     ACALL ADDITION
+0104                   7                     HERE:
+0104 80FE              8                     SJMP HERE
+0130                   9                     ORG 130H
+0130                  10                             GET_INPUT:
+0130 C3               11                             CLR C
+0131 E570             12                             MOV A,70H
+0133 8573F0           13                             MOV B,73H
+0136 A4               14                             MUL AB
+0137 85F050           15                             MOV 50H,B
+013A F551             16                             MOV 51H,A
+013C E571             17                             MOV A,71H
+013E 8574F0           18                             MOV B,74H
+0141 A4               19                             MUL AB
+0142 85F052           20                             MOV 52H,B
+0145 F553             21                             MOV 53H,A
+0147 E572             22                             MOV A,72H
+0149 8575F0           23                             MOV B,75H
+014C A4               24                             MUL AB
+014D 85F054           25                             MOV 54H,B
+0150 F555             26                             MOV 55H,A
+0152 22               27                             RET
+0153                  28                             ADDITION:
+0153 E551             29                             MOV A,51H
+0155 2553             30                             ADD A,53H
+0157 F562             31                             MOV 62H,A
+0159 E550             32                             MOV A,50H
+015B 3552             33                 ADDC A,     52H
+015D F561             34                 MOV 61H,A
+015F 752000           35                             MOV 20H,#00H
+0162 9200             36                             MOV 00H,C
+0164 E555             37                 MOV A,55H
+0166 2562             38                 ADD A,62H
+0168 F562             39                 MOV 62H,A
+016A E554             40                 MOV A,54H
+016C 3561             41                 ADDC A,61H
+016E F561             42                             MOV 61H,A
+0170 7400             43                             MOV A,#00H
+0172 3520             44                 ADDC A,20H
+0174 F560             45                 MOV 60H,A                   
+0176 22               46                             RET
+                      47                             END 
+                                                             
+                                                     
+A51 MACRO ASSEMBLER  MULTIPLY_AND_MANIPULATE                                              06/12/2023 10:06:45 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+ADDITION . . . . .  C ADDR   0153H   A   
+B. . . . . . . . .  D ADDR   00F0H   A   
+GET_INPUT. . . . .  C ADDR   0130H   A   
+HERE . . . . . . .  C ADDR   0104H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

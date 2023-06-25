@@ -1,0 +1,144 @@
+A51 MACRO ASSEMBLER  PROBLEM_STATEMENT_4_1_                                               06/08/2023 22:35:45 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Problem_Statement_4(1).obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Problem_Statement_4(1).a51 SET(SMALL) DEBUG PRINT(.\Listings\Problem_St
+                      atement_4(1).lst) OBJECT(.\Objects\Problem_Statement_4(1).obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00H
+0000 020130            2             LJMP MAIN
+0130                   3             ORG 130H
+0130                   4                     MAIN:
+0130 7590FF            5                     MOV P1,#0FFH
+0133 31AF              6                     CALL DELAY_5S
+0135 313D              7                     CALL GET_INPUT
+0137 3162              8                     CALL GET_INDEX
+0139 3170              9                     CALL GET_VALUE
+013B 80FE             10                     HERE:SJMP HERE
+013D                  11                     GET_INPUT:
+013D 7A0A             12                     MOV R2,#0AH
+013F 7830             13                     MOV R0,#30H
+0141 795F             14                     MOV R1,#5FH
+0143                  15                     SUB_INPUT:
+0143 09               16                     INC R1
+0144 75900F           17                     MOV P1,#0FH
+0147 3190             18                     CALL DELAY_10S
+0149 E590             19                     MOV A,P1
+014B C4               20                     SWAP A
+014C F6               21                     MOV @R0,A
+014D F590             22                     MOV P1,A
+014F 31AF             23                     CALL DELAY_5S
+0151 75900F           24                     MOV P1,#0FH
+0154 3190             25                     CALL DELAY_10S
+0156 E590             26                     MOV A,P1
+0158 46               27                     ORL A,@R0
+0159 F7               28                     MOV @R1,A
+015A C4               29                     SWAP A
+015B F590             30                     MOV P1,A
+015D 31AF             31                     CALL DELAY_5S
+015F DAE2             32                     DJNZ R2,SUB_INPUT
+0161 22               33                     RET
+0162                  34                     GET_INDEX:
+0162 75900F           35                     MOV P1,#0FH
+0165 3190             36                     CALL DELAY_10S
+0167 E590             37                     MOV A,P1
+0169 C4               38                     SWAP A
+016A F590             39                     MOV P1,A
+016C 31AF             40                     CALL DELAY_5S
+016E C4               41             SWAP A          
+016F 22               42                     RET
+0170                  43                     GET_VALUE:
+0170 C3               44                     CLR C
+0171 F540             45                     MOV 40H,A
+0173 940A             46                     SUBB A,#0AH
+0175 5015             47                     JNC CLEAR
+0177 317A             48                     CALL DISPLAY
+0179 22               49                     RET
+017A                  50                     DISPLAY:
+017A 785F             51                     MOV R0,#5FH
+017C                  52                     DISPLAY_SUB:
+017C 08               53                     INC R0
+017D E8               54                     MOV A,R0
+017E 540F             55                     ANL A,#0FH
+0180 B540F9           56                     CJNE A,40H,DISPLAY_SUB
+0183 E6               57                     MOV A,@R0
+A51 MACRO ASSEMBLER  PROBLEM_STATEMENT_4_1_                                               06/08/2023 22:35:45 PAGE     2
+
+0184 F590             58                     MOV P1,A
+0186 31AF             59                     CALL DELAY_5S
+0188 C4               60                     SWAP A
+0189 F590             61                     MOV P1,A
+018B 22               62                     RET
+018C                  63                     CLEAR:
+018C 759000           64                     MOV P1,#00H
+018F 22               65                     RET
+0190                  66     DELAY_10S:
+0190 75200A           67     L6:MOV 20H,#0AH
+0193 752102           68     L5:MOV 21H,#02H
+0196 7522FF           69     L4:MOV 22H,#0FFH
+0199 752305           70     L3:MOV 23H,#05H
+019C 7F00             71     L2: MOV R7,#00H
+019E 0F               72     L1:INC R7
+019F BFFFFC           73     CJNE R7,#0FFH,L1
+01A2 D523F7           74     DJNZ 23H,L2
+01A5 D522F1           75     DJNZ 22H,L3
+01A8 D521EB           76     DJNZ 21H,L4
+01AB D520E5           77     DJNZ 20H,L5
+01AE 22               78     RET
+01AF                  79     DELAY_5S:
+01AF 752005           80     S6:MOV 20H,#05H
+01B2 752102           81     S5:MOV 21H,#02H
+01B5 7522FF           82     S4:MOV 22H,#0FFH
+01B8 752305           83     S3:MOV 23H,#05H
+01BB 7F00             84     S2: MOV R7,#00H
+01BD 0F               85     S1:INC R7
+01BE BFFFFC           86     CJNE R7,#0FFH,S1
+01C1 D523F7           87     DJNZ 23H,S2
+01C4 D522F1           88     DJNZ 22H,S3
+01C7 D521EB           89     DJNZ 21H,S4
+01CA D520E5           90     DJNZ 20H,S5
+01CD 22               91     RET
+                      92     END
+                             
+                                             
+A51 MACRO ASSEMBLER  PROBLEM_STATEMENT_4_1_                                               06/08/2023 22:35:45 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+CLEAR. . . . . . .  C ADDR   018CH   A   
+DELAY_10S. . . . .  C ADDR   0190H   A   
+DELAY_5S . . . . .  C ADDR   01AFH   A   
+DISPLAY. . . . . .  C ADDR   017AH   A   
+DISPLAY_SUB. . . .  C ADDR   017CH   A   
+GET_INDEX. . . . .  C ADDR   0162H   A   
+GET_INPUT. . . . .  C ADDR   013DH   A   
+GET_VALUE. . . . .  C ADDR   0170H   A   
+HERE . . . . . . .  C ADDR   013BH   A   
+L1 . . . . . . . .  C ADDR   019EH   A   
+L2 . . . . . . . .  C ADDR   019CH   A   
+L3 . . . . . . . .  C ADDR   0199H   A   
+L4 . . . . . . . .  C ADDR   0196H   A   
+L5 . . . . . . . .  C ADDR   0193H   A   
+L6 . . . . . . . .  C ADDR   0190H   A   
+MAIN . . . . . . .  C ADDR   0130H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+S1 . . . . . . . .  C ADDR   01BDH   A   
+S2 . . . . . . . .  C ADDR   01BBH   A   
+S3 . . . . . . . .  C ADDR   01B8H   A   
+S4 . . . . . . . .  C ADDR   01B5H   A   
+S5 . . . . . . . .  C ADDR   01B2H   A   
+S6 . . . . . . . .  C ADDR   01AFH   A   
+SUB_INPUT. . . . .  C ADDR   0143H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
