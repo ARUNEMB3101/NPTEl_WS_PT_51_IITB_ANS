@@ -1,0 +1,26 @@
+ORG 00H
+SJMP MAIN
+ORG 030H
+MAIN:
+    CALL GO
+HERE:SJMP HERE
+GO:
+   MOV P1,#25H
+CALL DELAY
+  MOV P1,#0AFH
+  RET
+DELAY:
+        MOV A,71H
+		MOV R3,A
+		JNZ DELAY_250
+        RET
+		DELAY_250:
+		L3:MOV R5,#02H
+        L2:MOV R7,#30H
+        L1:MOV R0,#01H
+        LOOP:DJNZ R0,LOOP
+        DJNZ R7,L1
+		DJNZ R5,L2
+		DJNZ R3,L3
+        RET
+        END

@@ -1,0 +1,41 @@
+A51 MACRO ASSEMBLER  DAY_1_PRACTICE                                                       06/05/2023 15:39:41 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Day_1_Practice.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Day_1_Practice.a51 SET(SMALL) DEBUG PRINT(.\Listings\Day_1_Practice.lst
+                      ) OBJECT(.\Objects\Day_1_Practice.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00H
+0000 020030            2             LJMP MAIN
+0030                   3             ORG 30H
+0030                   4                     MAIN:
+0030 1134              5                     CALL ADD_8
+0032 80FE              6                     HERE:JMP HERE
+0034                   7                     ADD_8:
+0034 A960              8                     MOV R1,60H
+0036 AA61              9                     MOV R2,61H
+0038 E9               10                     MOV A,R1
+0039 2A               11                     ADD A,R2
+003A 22               12                     RET 
+                      13                     END
+                                        
+A51 MACRO ASSEMBLER  DAY_1_PRACTICE                                                       06/05/2023 15:39:41 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+ADD_8. . . . . . .  C ADDR   0034H   A   
+HERE . . . . . . .  C ADDR   0032H   A   
+MAIN . . . . . . .  C ADDR   0030H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

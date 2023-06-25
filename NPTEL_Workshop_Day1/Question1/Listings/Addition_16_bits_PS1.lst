@@ -1,0 +1,50 @@
+A51 MACRO ASSEMBLER  ADDITION_16_BITS_PS1                                                 06/05/2023 16:24:25 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Addition_16_bits_PS1.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Addition_16_bits_PS1.a51 SET(SMALL) DEBUG PRINT(.\Listings\Addition_16_
+                      bits_PS1.lst) OBJECT(.\Objects\Addition_16_bits_PS1.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00H
+0000 020100            2             LJMP MAIN
+0100                   3             ORG 100H
+0100                   4                     MAIN:
+0100 3130              5                     ACALL ADD16
+0102                   6                     HERE:
+0102 80FE              7                     SJMP HERE
+0130                   8                     ORG 130H
+0130                   9                             ADD16:
+0130 C3               10                             CLR C
+0131 E561             11                             MOV A,61H
+0133 2563             12                             ADD A,63H
+0135 F566             13                             MOV 66H,A
+0137 E560             14                             MOV  A,60H
+0139 3562             15                             ADDC A,62H
+013B F565             16                             MOV 65H,A
+013D 7400             17                             MOV A,#00H
+013F 3400             18                             ADDC A,#00H
+0141 F564             19                             MOV 64H,A
+0143 22               20                             RET
+                      21                             END 
+                                                             
+                                                     
+A51 MACRO ASSEMBLER  ADDITION_16_BITS_PS1                                                 06/05/2023 16:24:25 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+ADD16. . . . . . .  C ADDR   0130H   A   
+HERE . . . . . . .  C ADDR   0102H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

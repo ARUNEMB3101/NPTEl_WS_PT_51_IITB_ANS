@@ -1,0 +1,3 @@
+".\Objects\PS2_DELAY_CJNE.obj" 
+TO ".\Objects\Delay_PS2" 
+PRINT(".\Listings\Delay_PS2.m51") RAMSIZE(256) 

@@ -1,0 +1,60 @@
+A51 MACRO ASSEMBLER  PS2_DELAY                                                            06/06/2023 14:16:15 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\PS2_Delay.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE PS2_Delay.a51 SET(SMALL) DEBUG PRINT(.\Listings\PS2_Delay.lst) OBJECT(.
+                      \Objects\PS2_Delay.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00H
+0000 802E              2     SJMP MAIN
+0030                   3     ORG 030H
+0030                   4     MAIN:
+0030 1134              5         CALL GO
+0032 80FE              6     HERE:SJMP HERE
+0034                   7     GO:
+0034 759025            8        MOV P1,#25H
+0037 113D              9     CALL DELAY
+0039 7590AF           10       MOV P1,#0AFH
+003C 22               11       RET
+003D                  12     DELAY:
+003D E571             13             MOV A,71H
+003F FB               14                     MOV R3,A
+0040 7001             15                     JNZ DELAY_250
+0042 22               16             RET
+0043                  17                     DELAY_250:
+0043 7D02             18                     L3:MOV R5,#02H
+0045 7F30             19             L2:MOV R7,#30H
+0047 7801             20             L1:MOV R0,#01H
+0049 D8FE             21             LOOP:DJNZ R0,LOOP
+004B DFFA             22             DJNZ R7,L1
+004D DDF6             23                     DJNZ R5,L2
+004F DBF2             24                     DJNZ R3,L3
+0051 22               25             RET
+                      26             END
+A51 MACRO ASSEMBLER  PS2_DELAY                                                            06/06/2023 14:16:15 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DELAY. . . . . . .  C ADDR   003DH   A   
+DELAY_250. . . . .  C ADDR   0043H   A   
+GO . . . . . . . .  C ADDR   0034H   A   
+HERE . . . . . . .  C ADDR   0032H   A   
+L1 . . . . . . . .  C ADDR   0047H   A   
+L2 . . . . . . . .  C ADDR   0045H   A   
+L3 . . . . . . . .  C ADDR   0043H   A   
+LOOP . . . . . . .  C ADDR   0049H   A   
+MAIN . . . . . . .  C ADDR   0030H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

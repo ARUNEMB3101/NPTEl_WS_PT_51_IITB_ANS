@@ -1,0 +1,57 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    06/09/2023  07:23:27  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\Addition_16_bits_PS1.obj TO .\Objects\Addition_16_bits PRINT (.\Listings\Addition_
+>> 16_bits.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\Addition_16_bits_PS1.obj (ADDITION_16_BITS_PS1)
+
+
+LINK MAP OF MODULE:  .\Objects\Addition_16_bits (ADDITION_16_BITS_PS1)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0144H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Addition_16_bits (ADDITION_16_BITS_PS1)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ADDITION_16_BITS_PS1
+  C:0130H         SYMBOL        ADD16
+  C:0102H         SYMBOL        HERE
+  C:0100H         SYMBOL        MAIN
+  C:0000H         LINE#         2
+  C:0100H         LINE#         5
+  C:0102H         LINE#         7
+  C:0130H         LINE#         10
+  C:0131H         LINE#         11
+  C:0133H         LINE#         12
+  C:0135H         LINE#         13
+  C:0137H         LINE#         14
+  C:0139H         LINE#         15
+  C:013BH         LINE#         16
+  C:013DH         LINE#         17
+  C:013FH         LINE#         18
+  C:0141H         LINE#         19
+  C:0143H         LINE#         20
+  -------         ENDMOD        ADDITION_16_BITS_PS1
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 001BH BYTE ( 1%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=324
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
