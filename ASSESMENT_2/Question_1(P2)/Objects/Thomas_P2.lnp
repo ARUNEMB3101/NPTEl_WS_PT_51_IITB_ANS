@@ -1,0 +1,3 @@
+".\Objects\Multiplication2.obj" 
+TO ".\Objects\Thomas_P2" 
+PRINT(".\Listings\Thomas_P2.m51") RAMSIZE(256) 

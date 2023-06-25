@@ -1,0 +1,46 @@
+C51 COMPILER V9.60.7.0   MULTIPLICATION                                                    06/16/2023 14:22:43 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MULTIPLICATION
+OBJECT MODULE PLACED IN .\Objects\Multiplication.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Multiplication.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Lis
+                    -tings\Multiplication.lst) TABS(2) OBJECT(.\Objects\Multiplication.obj)
+
+line level    source
+
+   1          #include <at89c5131.h>
+   2          long unsigned int x=14571;
+   3          long unsigned int y=8636;
+   4          long unsigned int x0,x1,y1,y0,z0,z1,z2,z3,z;
+   5          void main()
+   6          {
+   7   1        TMOD=0X01;
+   8   1        TH0=0X00;
+   9   1        TL0=0X00;
+  10   1        TR0=1;
+  11   1        x1=x/10;
+  12   1        x0=x%10;
+  13   1        y1=y/10;
+  14   1        y0=y%10;
+  15   1        z0=x0*y0;
+  16   1        z1=x0*y1;
+  17   1        z2=x1*y0;
+  18   1        z3=x1*y1;
+  19   1        z=z0+(z1+z2)*10+z3*100;
+  20   1        TR0=0;
+  21   1        while(1);
+  22   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    323    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     44    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
