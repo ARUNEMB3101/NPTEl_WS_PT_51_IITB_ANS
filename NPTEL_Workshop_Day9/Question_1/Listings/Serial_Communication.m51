@@ -1,0 +1,129 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    06/16/2023  12:44:09  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\Serial_com.obj TO .\Objects\Serial_Communication PRINT (.\Listings\Serial_Communic
+>> ation.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\Serial_com.obj (SERIAL_COM)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDPTR)
+
+
+LINK MAP OF MODULE:  .\Objects\Serial_Communication (SERIAL_COM)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0019H     UNIT         ?C?LIB_CODE
+            CODE    0819H     0016H     UNIT         ?PR?_SEND_CHAR?SERIAL_COM
+            CODE    082FH     000EH     UNIT         ?PR?MAIN?SERIAL_COM
+            CODE    083DH     000CH     UNIT         ?PR?UART_INIT?SERIAL_COM
+            CODE    0849H     000CH     UNIT         ?CO?SERIAL_COM
+            CODE    0855H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\Serial_Communication (SERIAL_COM)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?SERIAL_COM
+
+?PR?MAIN?SERIAL_COM
+  +--> ?PR?UART_INIT?SERIAL_COM
+  +--> ?CO?SERIAL_COM
+  +--> ?PR?_SEND_CHAR?SERIAL_COM
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Serial_Communication (SERIAL_COM)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        SERIAL_COM
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  06/16/2023  12:44:09  PAGE 2
+
+
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00C0H         PUBLIC        P4
+  D:00A8H         PUBLIC        IEN0
+  D:00B8H         PUBLIC        IPL0
+  B:0098H.1       PUBLIC        TI
+  D:00D8H         PUBLIC        CCON
+  C:082FH         PUBLIC        main
+  C:0819H         PUBLIC        _send_char
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  D:008DH         PUBLIC        TH1
+  C:083DH         PUBLIC        uart_init
+  D:00F8H         PUBLIC        UEPINT
+  B:0088H.6       PUBLIC        TR1
+  D:00C8H         PUBLIC        T2CON
+  -------         PROC          UART_INIT
+  C:083DH         LINE#         2
+  C:083DH         LINE#         3
+  C:083DH         LINE#         4
+  C:0840H         LINE#         5
+  C:0843H         LINE#         7
+  C:0846H         LINE#         8
+  C:0848H         LINE#         9
+  -------         ENDPROC       UART_INIT
+  -------         PROC          _SEND_CHAR
+  D:0001H         SYMBOL        s
+  C:0819H         LINE#         10
+  C:0819H         LINE#         11
+  C:0819H         LINE#         12
+  C:081EH         LINE#         13
+  C:081EH         LINE#         14
+  C:0820H         LINE#         15
+  C:0823H         LINE#         16
+  C:0825H         LINE#         17
+  C:082CH         LINE#         18
+  C:082EH         LINE#         20
+  -------         ENDPROC       _SEND_CHAR
+  -------         PROC          MAIN
+  C:082FH         LINE#         21
+  C:082FH         LINE#         22
+  C:082FH         LINE#         23
+  C:0832H         LINE#         24
+  C:083BH         LINE#         25
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        SERIAL_COM
+
+  -------         MODULE        ?C?CLDPTR
+  C:0800H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+******************************************************************************
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  06/16/2023  12:44:09  PAGE 3
+
+
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 003CH BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=100
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

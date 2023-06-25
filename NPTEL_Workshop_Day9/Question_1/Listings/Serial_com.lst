@@ -1,0 +1,51 @@
+C51 COMPILER V9.60.7.0   SERIAL_COM                                                        06/16/2023 12:44:09 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE SERIAL_COM
+OBJECT MODULE PLACED IN .\Objects\Serial_com.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Serial_com.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listing
+                    -s\Serial_com.lst) TABS(2) OBJECT(.\Objects\Serial_com.obj)
+
+line level    source
+
+   1          #include <at89c5131.h>
+   2          void uart_init(void)
+   3          {
+   4   1        TMOD = 0X20;
+   5   1        TH1=0XF3;
+   6   1        
+   7   1        SCON = 0x50;
+   8   1        TR1=1;
+   9   1      }
+  10          void send_char(char *s)
+  11          {
+  12   1       while(*s!='\0')
+  13   1       {
+  14   2         SBUF=*s;
+  15   2         while(TI!=1);
+  16   2         TI=0;
+  17   2         *s++;
+*** WARNING C275 IN LINE 17 OF Serial_com.c: expression with possibly no effect
+  18   2       }
+  19   1       
+  20   1      }
+  21          void main()
+  22          {
+  23   1        uart_init();
+  24   1        send_char(" IIT BOMBAY");
+  25   1        while(1);
+  26   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     48    ----
+   CONSTANT SIZE    =     12    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)
