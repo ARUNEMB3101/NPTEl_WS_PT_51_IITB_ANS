@@ -1,0 +1,4 @@
+".\Objects\Sare_Gama_Pa.obj" 
+TO ".\Objects\Question_1" 
+PRINT(".\Listings\Question_1.m51") RAMSIZE(256) 
+CODE( 0X0000-0X7FFF )
