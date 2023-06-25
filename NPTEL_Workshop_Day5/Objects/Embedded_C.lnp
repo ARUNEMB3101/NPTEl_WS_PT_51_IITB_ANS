@@ -1,0 +1,3 @@
+".\Objects\Led_On_Switch.obj" 
+TO ".\Objects\Embedded_C" 
+PRINT(".\Listings\Embedded_C.m51") RAMSIZE(256) 

@@ -1,0 +1,138 @@
+C51 COMPILER V9.60.7.0   LCD_SORTING                                                       06/12/2023 15:12:01 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE LCD_SORTING
+OBJECT MODULE PLACED IN .\Objects\LCD_Sorting.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE LCD_Sorting.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listin
+                    -gs\LCD_Sorting.lst) TABS(2) OBJECT(.\Objects\LCD_Sorting.obj)
+
+line level    source
+
+   1          #include <at89c5131.h>
+   2          #include "lcd.h"
+   3          #define ms_delay msdelay
+   4          void main()
+   5          {
+   6   1        unsigned char ch,ch1,swap,arr[6],i=1,temp,sml,str,prnt,ind,inc=0,j,k;
+   7   1        lcd_init();
+   8   1        lcd_write_string(" START PROGRAM  ");
+   9   1        P1=0x0F;
+  10   1        ms_delay(5000);
+  11   1        lcd_cmd(0x01);
+  12   1        lcd_write_string("  FIRST INPUT   ");
+  13   1        ms_delay(5000);
+  14   1        while(i!=6)
+  15   1        {
+  16   2        P1=P1&0X0F;
+  17   2        temp=P1;
+  18   2        P1=0X00;
+  19   2        ms_delay(1000);
+  20   2        P1=temp;
+  21   2        arr[i]=P1;
+  22   2        ch=P1&0X0F;
+  23   2        ch1=P1&0XF0;
+  24   2        ch=ch<<4;
+  25   2        ch1=ch1>>4;
+  26   2        swap=ch|ch1;
+  27   2        if(i==5)
+  28   2        {
+  29   3          P1=swap;
+  30   3          lcd_cmd(0X01);
+  31   3          lcd_write_string("SORTING...");
+  32   3          ms_delay(5000);
+  33   3          P1=0X0F;
+  34   3          lcd_cmd(0X01);
+  35   3          lcd_write_string("    SORTING     ");
+  36   3          lcd_cmd(0XC0);
+  37   3          lcd_write_string("   COMPLETED    ");
+  38   3          for(j=1;j<6;j++)
+  39   3          {
+  40   4            for(k=j+1;k<6;k++)
+  41   4            {
+  42   5            if(arr[j]>arr[k])
+  43   5            {
+  44   6              str=arr[j];
+  45   6              arr[j]=arr[k];
+  46   6              arr[k]=str;
+  47   6            }     
+  48   5          }     
+  49   4            
+  50   4        }
+  51   3          for(j=1;j<6;j++)
+  52   3        {
+  53   4        prnt=arr[j];
+  54   4        ch=prnt&0X0F;
+C51 COMPILER V9.60.7.0   LCD_SORTING                                                       06/12/2023 15:12:01 PAGE 2   
+
+  55   4        ch1=prnt&0XF0;
+  56   4        ch=ch<<4;
+  57   4        ch1=ch1>>4;
+  58   4        swap=ch|ch1;
+  59   4        P1=swap;
+  60   4        ms_delay(5000);
+  61   4        P1=0X00;
+  62   4        ms_delay(1000);
+  63   4        }
+  64   3        P1=0XFF;
+  65   3        lcd_cmd(0X01);
+  66   3        lcd_write_string("  NUMBER TO BE  ");
+  67   3        lcd_cmd(0XC0);
+  68   3        lcd_write_string("    SEARCHED    ");
+  69   3        ms_delay(5000);
+  70   3        ch=P1&0X0F;
+  71   3        lcd_cmd(0X01);
+  72   3        P1=0X00;
+  73   3        ms_delay(1000);
+  74   3        for(j=1;j<6;j++)
+  75   3        {
+  76   4          if(arr[j]==ch)
+  77   4          {
+  78   5            inc++;
+  79   5            lcd_write_string("  THE INDEX IS  ");
+  80   5            ind=j<<4;
+  81   5            P1=ind;
+  82   5            while(1)
+  83   5            {
+  84   6            }
+  85   5          }
+  86   4        }
+  87   3        if(inc==0)
+  88   3        {
+  89   4          lcd_write_string("     NUMBER    ");
+  90   4          lcd_cmd(0XC0);
+  91   4          lcd_write_string("   NOT FOUND   ");
+  92   4          while(1)
+  93   4          {
+  94   5          }
+  95   4        }
+  96   3        
+  97   3      }
+  98   2        lcd_cmd(0X01);
+  99   2        lcd_write_string("    NEXT INPUT   ");
+ 100   2        P1=swap;
+ 101   2        ms_delay(5000);
+ 102   2        P1=0x0F;
+ 103   2        i++;
+ 104   2        
+ 105   2      }
+ 106   1        
+ 107   1        
+ 108   1        
+ 109   1      }
+*** WARNING C280 IN LINE 6 OF LCD_Sorting.c: 'sml': unreferenced local variable
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    609    ----
+   CONSTANT SIZE    =    180    ----
+   XDATA SIZE       =   ----    ----
+C51 COMPILER V9.60.7.0   LCD_SORTING                                                       06/12/2023 15:12:01 PAGE 3   
+
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      16
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)
