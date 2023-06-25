@@ -1,0 +1,128 @@
+A51 MACRO ASSEMBLER  QUIZ_1                                                               06/09/2023 11:11:06 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\QUIZ_1.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE QUIZ_1.a51 SET(SMALL) DEBUG PRINT(.\Listings\QUIZ_1.lst) OBJECT(.\Objec
+                      ts\QUIZ_1.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0H
+0000 020100            2             LJMP MAIN
+0100                   3     ORG 100H
+0100                   4     MAIN:
+0100 3130              5     CALL FILT
+0102 80FE              6     HERE: SJMP HERE
+0130                   7     ORG 130H
+0130                   8     FILT:
+0130 7A5F              9     MOV R2,#5FH
+0132 7B00             10     MOV R3,#00H
+0134 7970             11     MOV R1,#70H
+0136                  12     GET_FILT:
+0136 7820             13     MOV R0,#20H
+0138 0A               14     INC R2
+0139 EA               15     MOV A,R2
+013A 540F             16     ANL A,#0FH
+013C F5F0             17     MOV B,A
+013E                  18     CALCULATE:
+013E 4460             19     ORL A,#60H
+0140 8830             20     MOV 30H,R0
+0142 F8               21     MOV R0,A
+0143 8631             22     MOV 31H,@R0
+0145 A830             23     MOV R0,30H
+0147 A631             24     MOV @R0,31H
+0149 E5F0             25     MOV A,B
+014B                  26     TERMS:
+014B                  27     FIRST_TERM:
+014B F545             28     MOV 45H,A
+014D C3               29     CLR C
+014E 9401             30     SUBB A,#01H
+0150 502B             31     JNC NON_NEG1
+0152 08               32     INC R0
+0153 7600             33     MOV @R0,#00H
+0155                  34     SECOND_TERM:
+0155 E545             35     MOV A,45H
+0157 C3               36     CLR C
+0158 9402             37     SUBB A,#02H
+015A 502D             38     JNC NON_NEG2
+015C 08               39     INC R0
+015D 7600             40     MOV @R0,#00H
+015F                  41     THIRD_TERM:
+015F E545             42     MOV A,45H
+0161 C3               43     CLR C
+0162 9403             44     SUBB A,#03H
+0164 502F             45     JNC NON_NEG3
+0166 08               46     INC R0
+0167 7600             47     MOV @R0,#00H
+0169                  48     ADDITION:
+0169 E520             49     MOV A,20H
+016B AD21             50     MOV R5,21H
+016D 2D               51     ADD A,R5
+016E 3522             52     ADDC A,22H
+0170 3523             53     ADDC A,23H
+0172 75F004           54     MOV B,#04H
+0175 84               55     DIV AB
+0176 F7               56     MOV @R1,A
+0177 0B               57     INC R3
+A51 MACRO ASSEMBLER  QUIZ_1                                                               06/09/2023 11:11:06 PAGE     2
+
+0178 09               58     INC R1
+0179 BB08BA           59     CJNE R3,#08H,GET_FILT
+017C 22               60     RET
+017D                  61     NON_NEG1:
+017D 08               62     INC R0
+017E 8846             63     MOV 46H,R0
+0180 4460             64     ORL A,#60H
+0182 F8               65     MOV R0,A
+0183 E6               66     MOV A,@R0
+0184 A846             67     MOV R0,46H
+0186 F6               68     MOV @R0,A
+0187 80CC             69     SJMP SECOND_TERM
+0189                  70     NON_NEG2:
+0189 08               71     INC R0
+018A 8846             72     MOV 46H,R0
+018C 4460             73     ORL A,#60H
+018E F8               74     MOV R0,A
+018F E6               75     MOV A,@R0
+0190 A846             76     MOV R0,46H
+0192 F6               77     MOV @R0,A
+0193 80CA             78     SJMP THIRD_TERM
+0195                  79     NON_NEG3:
+0195 08               80     INC R0
+0196 8846             81     MOV 46H,R0
+0198 4460             82     ORL A,#60H
+019A F8               83     MOV R0,A
+019B E6               84     MOV A,@R0
+019C A846             85     MOV R0,46H
+019E F6               86     MOV @R0,A
+019F 80C8             87     SJMP ADDITION
+                      88     END
+A51 MACRO ASSEMBLER  QUIZ_1                                                               06/09/2023 11:11:06 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+ADDITION . . . . .  C ADDR   0169H   A   
+B. . . . . . . . .  D ADDR   00F0H   A   
+CALCULATE. . . . .  C ADDR   013EH   A   
+FILT . . . . . . .  C ADDR   0130H   A   
+FIRST_TERM . . . .  C ADDR   014BH   A   
+GET_FILT . . . . .  C ADDR   0136H   A   
+HERE . . . . . . .  C ADDR   0102H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+NON_NEG1 . . . . .  C ADDR   017DH   A   
+NON_NEG2 . . . . .  C ADDR   0189H   A   
+NON_NEG3 . . . . .  C ADDR   0195H   A   
+SECOND_TERM. . . .  C ADDR   0155H   A   
+TERMS. . . . . . .  C ADDR   014BH   A   
+THIRD_TERM . . . .  C ADDR   015FH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
