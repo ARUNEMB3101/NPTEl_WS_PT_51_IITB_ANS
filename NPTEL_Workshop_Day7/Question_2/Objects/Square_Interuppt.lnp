@@ -1,0 +1,3 @@
+".\Objects\Square_Wave_Using_Interuppt.obj" 
+TO ".\Objects\Square_Interuppt" 
+PRINT(".\Listings\Square_Interuppt.m51") RAMSIZE(256) 

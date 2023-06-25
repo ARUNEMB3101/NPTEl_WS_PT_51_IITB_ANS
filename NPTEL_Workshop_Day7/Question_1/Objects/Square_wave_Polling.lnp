@@ -1,0 +1,3 @@
+".\Objects\Wave_generation_Timers.obj" 
+TO ".\Objects\Square_wave_Polling" 
+PRINT(".\Listings\Square_wave_Polling.m51") RAMSIZE(256) 

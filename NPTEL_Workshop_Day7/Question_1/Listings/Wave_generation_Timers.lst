@@ -1,0 +1,63 @@
+C51 COMPILER V9.60.7.0   WAVE_GENERATION_TIMERS                                            06/15/2023 10:48:05 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE WAVE_GENERATION_TIMERS
+OBJECT MODULE PLACED IN .\Objects\Wave_generation_Timers.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Wave_generation_Timers.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRI
+                    -NT(.\Listings\Wave_generation_Timers.lst) TABS(2) OBJECT(.\Objects\Wave_generation_Timers.obj)
+
+line level    source
+
+   1          #include <at89c5131.h>
+   2          sbit pin=P1^6;
+   3          void delay1(void);
+   4          void delay2(void);
+   5          void main()
+   6          {
+   7   1        P1=0xFF;
+   8   1        while(1)
+   9   1        {
+  10   2          P1=0X00;
+  11   2          delay2();
+  12   2          P1=0XFF;
+  13   2          delay1();
+  14   2        }
+  15   1      }
+  16          void delay1()
+  17          {
+  18   1        TMOD =0X10;
+  19   1        TH1=0XE0;
+  20   1        TL1=0XC0;
+  21   1        TR1=1;
+  22   1        while(TF1!=1)
+  23   1        {
+  24   2        }
+  25   1        TR1=0;
+  26   1        TF1=0;
+  27   1      }
+  28          void delay2()
+  29          {
+  30   1        TMOD=0X10;
+  31   1        TH1=0XA2;
+  32   1        TL1=0X40;
+  33   1        TR1=1;
+  34   1        while(TF1!=1)
+  35   1        {
+  36   2        }
+  37   1        TR1=0;
+  38   1        TF1=0;
+  39   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     55    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

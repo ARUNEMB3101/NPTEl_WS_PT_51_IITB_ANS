@@ -1,0 +1,146 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    06/15/2023  12:34:47  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\Square_Wave_Using_Interuppt.obj TO .\Objects\Square_Interuppt PRINT (.\Listings\Sq
+>> uare_Interuppt.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\Square_Wave_Using_Interuppt.obj (SQUARE_WAVE_USING_INTERUPPT)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\Square_Interuppt (SQUARE_WAVE_USING_INTERUPPT)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0008H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+                    000EH     000DH                  *** GAP ***
+            CODE    001BH     0003H     ABSOLUTE     
+                    001EH     07E2H                  *** GAP ***
+            CODE    0800H     001FH     UNIT         ?PR?MAIN?SQUARE_WAVE_USING_INTERUPPT
+            CODE    081FH     0012H     UNIT         ?PR?TIMER0?SQUARE_WAVE_USING_INTERUPPT
+            CODE    0831H     0012H     UNIT         ?PR?TIMER1?SQUARE_WAVE_USING_INTERUPPT
+            CODE    0843H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\Square_Interuppt (SQUARE_WAVE_USING_INTERUPPT)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?SQUARE_WAVE_USING_INTERUPPT
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Square_Interuppt (SQUARE_WAVE_USING_INTERUPPT)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        SQUARE_WAVE_USING_INTERUPPT
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  06/15/2023  12:34:47  PAGE 2
+
+
+  D:00B0H         PUBLIC        P3
+  D:00C0H         PUBLIC        P4
+  B:00A8H.7       PUBLIC        EA
+  D:00A8H         PUBLIC        IEN0
+  D:00B8H         PUBLIC        IPL0
+  D:00D8H         PUBLIC        CCON
+  C:0800H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  B:00A8H.1       PUBLIC        ET0
+  B:00A8H.3       PUBLIC        ET1
+  D:008CH         PUBLIC        TH0
+  D:008DH         PUBLIC        TH1
+  D:008AH         PUBLIC        TL0
+  D:008BH         PUBLIC        TL1
+  C:081FH         PUBLIC        timer0
+  C:0831H         PUBLIC        timer1
+  B:0088H.4       PUBLIC        TR0
+  D:00F8H         PUBLIC        UEPINT
+  B:0088H.6       PUBLIC        TR1
+  D:00C8H         PUBLIC        T2CON
+  B:0090H.6       PUBLIC        pin1
+  B:0090H.7       PUBLIC        pin2
+  -------         PROC          TIMER0
+  C:081FH         LINE#         5
+  C:081FH         LINE#         8
+  C:0822H         LINE#         9
+  C:0822H         LINE#         10
+  C:0824H         LINE#         11
+  C:0826H         LINE#         13
+  C:0826H         LINE#         14
+  C:0828H         LINE#         15
+  C:0828H         LINE#         17
+  C:082BH         LINE#         18
+  C:082EH         LINE#         19
+  C:0830H         LINE#         20
+  -------         ENDPROC       TIMER0
+  -------         PROC          TIMER1
+  C:0831H         LINE#         22
+  C:0831H         LINE#         24
+  C:0834H         LINE#         25
+  C:0834H         LINE#         26
+  C:0836H         LINE#         27
+  C:0838H         LINE#         29
+  C:0838H         LINE#         30
+  C:083AH         LINE#         31
+  C:083AH         LINE#         34
+  C:083DH         LINE#         35
+  C:0840H         LINE#         36
+  C:0842H         LINE#         37
+  -------         ENDPROC       TIMER1
+  -------         PROC          MAIN
+  C:0800H         LINE#         38
+  C:0800H         LINE#         39
+  C:0800H         LINE#         40
+  C:0803H         LINE#         41
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  06/15/2023  12:34:47  PAGE 3
+
+
+  C:0805H         LINE#         42
+  C:0807H         LINE#         43
+  C:0809H         LINE#         44
+  C:080CH         LINE#         45
+  C:080FH         LINE#         46
+  C:0812H         LINE#         47
+  C:0815H         LINE#         48
+  C:0817H         LINE#         49
+  C:0819H         LINE#         50
+  C:081BH         LINE#         51
+  C:081DH         LINE#         52
+  C:081DH         LINE#         53
+  C:081DH         LINE#         54
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        SQUARE_WAVE_USING_INTERUPPT
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0049H BYTE ( 3%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=88
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
