@@ -1,0 +1,3 @@
+".\Objects\Quan_In_Out.obj" 
+TO ".\Objects\Quatisation_Input_and_Output" 
+PRINT(".\Listings\Quatisation_Input_and_Output.m51") RAMSIZE(256) 
