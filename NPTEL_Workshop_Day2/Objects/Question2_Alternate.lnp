@@ -1,0 +1,3 @@
+".\Objects\Question2_Again.obj" 
+TO ".\Objects\Question2_Alternate" 
+PRINT(".\Listings\Question2_Alternate.m51") RAMSIZE(256) 

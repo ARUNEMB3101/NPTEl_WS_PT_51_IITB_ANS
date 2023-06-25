@@ -1,0 +1,76 @@
+A51 MACRO ASSEMBLER  QUESTION2_AGAIN                                                      06/07/2023 09:40:00 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Question2_Again.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Question2_Again.a51 SET(SMALL) DEBUG PRINT(.\Listings\Question2_Again.l
+                      st) OBJECT(.\Objects\Question2_Again.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     
+0000                   2     ORG 00H
+0000 020100            3     LJMP MAIN
+0100                   4     ORG 100H
+0100                   5     MAIN:
+0100 3130              6     CALL QUANT
+0102 80FE              7     HERE: SJMP HERE
+0130                   8     ORG 130H
+0130                   9         QUANT:
+0130 7860             10             MOV R0,#60H
+0132 7970             11         MOV R1,#70H
+0134 7A00             12         MOV R2,#00H
+0136                  13                   BYTE_1:
+0136 E6               14                   MOV A,@R0
+0137 C3               15                   CLR C
+0138 9409             16                       SUBB A,#09H
+013A 5004             17                       JNC NEXT_11
+013C 7705             18                       MOV @R1,#05H
+013E 8017             19                       SJMP INCRE
+0140                  20                       NEXT_11:
+0140 C3               21                          CLR C
+0141 E6               22                              MOV A,@R0
+0142 9419             23                              SUBB A,#19H
+0144 5004             24                              JNC NEXT_12
+0146 7715             25                              MOV @R1,#15H
+0148 800D             26                              SJMP INCRE
+014A                  27                              NEXT_12:
+014A C3               28                                 CLR C
+014B E6               29                                     MOV A,@R0
+014C 9429             30                                     SUBB A,#29H
+014E 5004             31                                     JNC NEXT_13
+0150 7725             32                                     MOV @R1,#25H
+0152 8003             33                                     SJMP INCRE
+0154                  34                                     NEXT_13:
+0154 C3               35                                        CLR C
+0155 7735             36                                        MOV @R1,#35H
+0157                  37                                     INCRE:
+0157 0A               38                                        INC R2
+0158 08               39                                    INC R0
+0159 09               40                                        INC R1
+015A BA08D9           41                                        CJNE R2,#08H,BYTE_1
+                      42             
+015D 22               43     RET
+                      44     END
+A51 MACRO ASSEMBLER  QUESTION2_AGAIN                                                      06/07/2023 09:40:00 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BYTE_1 . . . . . .  C ADDR   0136H   A   
+HERE . . . . . . .  C ADDR   0102H   A   
+INCRE. . . . . . .  C ADDR   0157H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+NEXT_11. . . . . .  C ADDR   0140H   A   
+NEXT_12. . . . . .  C ADDR   014AH   A   
+NEXT_13. . . . . .  C ADDR   0154H   A   
+QUANT. . . . . . .  C ADDR   0130H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

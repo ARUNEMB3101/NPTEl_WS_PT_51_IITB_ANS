@@ -1,0 +1,275 @@
+A51 MACRO ASSEMBLER  QUATISATION                                                          06/07/2023 00:01:47 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Quatisation.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Quatisation.a51 SET(SMALL) DEBUG PRINT(.\Listings\Quatisation.lst) OBJE
+                      CT(.\Objects\Quatisation.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     
+0000                   2     ORG 00H
+0000 020100            3     LJMP MAIN
+0100                   4     ORG 100H
+0100                   5     MAIN:
+0100 3130              6     CALL QUANT
+0102 80FE              7     HERE: SJMP HERE
+0130                   8     ORG 130H
+0130                   9         QUANT:
+0130                  10                   BYTE_1:
+0130 E560             11                   MOV A,60H
+0132 C3               12                   CLR C
+0133 9409             13                       SUBB A,#09H
+0135 5005             14                       JNC NEXT_11
+0137 757005           15                       MOV 70H,#05H
+013A 801E             16                       SJMP BYTE_2
+013C                  17                       NEXT_11:
+013C C3               18                          CLR C
+013D E560             19                              MOV A,60H
+013F 9419             20                              SUBB A,#19H
+0141 5005             21                              JNC NEXT_12
+0143 757015           22                              MOV 70H,#15H
+0146 8012             23                              SJMP BYTE_2
+0148                  24                              NEXT_12:
+0148 C3               25                                 CLR C
+0149 E560             26                                     MOV A,60H
+014B 9429             27                                     SUBB A,#29H
+014D 5005             28                                     JNC NEXT_13
+014F 757025           29                                     MOV 70H,#25H
+0152 8006             30                                     SJMP BYTE_2
+0154                  31                                     NEXT_13:
+0154 C3               32                                        CLR C
+0155 757035           33                                        MOV 70H,#35H
+0158 8000             34                                        SJMP BYTE_2
+015A                  35                   BYTE_2:   
+015A E561             36               MOV A,61H
+015C C3               37                   CLR C
+015D 9409             38                       SUBB A,#09H
+015F 5005             39                       JNC NEXT_21
+0161 757115           40                       MOV 71H,#15H
+0164 801E             41                       SJMP BYTE_3
+0166                  42                       NEXT_21:
+0166 C3               43                          CLR C
+0167 E561             44                              MOV A,61H
+0169 9419             45                              SUBB A,#19H
+016B 5005             46                              JNC NEXT_22
+016D 757115           47                              MOV 71H,#15H
+0170 8012             48                              SJMP BYTE_3
+0172                  49                              NEXT_22:
+0172 C3               50                                 CLR C
+0173 E561             51                                     MOV A,61H
+0175 9429             52                                     SUBB A,#29H
+0177 5005             53                                     JNC NEXT_23
+0179 757125           54                                     MOV 71H,#25H
+017C 8006             55                                     SJMP BYTE_3
+017E                  56                                     NEXT_23:
+017E C3               57                                        CLR C
+A51 MACRO ASSEMBLER  QUATISATION                                                          06/07/2023 00:01:47 PAGE     2
+
+017F 757135           58                                        MOV 71H,#35H
+0182 80D6             59                                        SJMP BYTE_2  
+0184                  60             BYTE_3: 
+0184 E562             61               MOV A,62H
+0186 C3               62                   CLR C
+0187 9409             63                       SUBB A,#09H
+0189 5005             64                       JNC NEXT_31
+018B 757215           65                       MOV 72H,#15H
+018E 801E             66                       SJMP BYTE_4
+0190                  67                       NEXT_31:
+0190 C3               68                          CLR C
+0191 E562             69                              MOV A,62H
+0193 9419             70                              SUBB A,#19H
+0195 5005             71                              JNC NEXT_32
+0197 757215           72                              MOV 72H,#15H
+019A 8012             73                              SJMP BYTE_4
+019C                  74                              NEXT_32:
+019C C3               75                                 CLR C
+019D E562             76                                     MOV A,62H
+019F 9429             77                                     SUBB A,#29H
+01A1 5005             78                                     JNC NEXT_33
+01A3 757225           79                                     MOV 72H,#25H
+01A6 8006             80                                     SJMP BYTE_4
+01A8                  81                                     NEXT_33:
+01A8 C3               82                                        CLR C
+01A9 757235           83                                        MOV 72H,#35H
+01AC 8000             84                                        SJMP BYTE_4          
+01AE                  85               BYTE_4:       
+01AE E563             86               MOV A,63H
+01B0 C3               87                   CLR C
+01B1 9409             88                       SUBB A,#09H
+01B3 5005             89                       JNC NEXT_41
+01B5 757315           90                       MOV 73H,#15H
+01B8 801E             91                       SJMP BYTE_5
+01BA                  92                       NEXT_41:
+01BA C3               93                          CLR C
+01BB E563             94                              MOV A,63H
+01BD 9419             95                              SUBB A,#19H
+01BF 5005             96                              JNC NEXT_42
+01C1 757315           97                              MOV 73H,#15H
+01C4 8012             98                              SJMP BYTE_5
+01C6                  99                              NEXT_42:
+01C6 C3              100                                 CLR C
+01C7 E563            101                                     MOV A,63H
+01C9 9429            102                                     SUBB A,#29H
+01CB 5005            103                                     JNC NEXT_43
+01CD 757325          104                                     MOV 73H,#25H
+01D0 8006            105                                     SJMP BYTE_5
+01D2                 106                                     NEXT_43:
+01D2 C3              107                                        CLR C
+01D3 757335          108                                        MOV 73H,#35H
+01D6 8000            109                                        SJMP BYTE_5
+01D8                 110                   BYTE_5:   
+01D8 E564            111               MOV A,64H
+01DA C3              112                   CLR C
+01DB 9409            113                       SUBB A,#09H
+01DD 5005            114                       JNC NEXT_51
+01DF 757415          115                       MOV 74H,#15H
+01E2 801E            116                       SJMP BYTE_6
+01E4                 117                       NEXT_51:
+01E4 C3              118                          CLR C
+01E5 E564            119                              MOV A,64H
+01E7 9419            120                              SUBB A,#19H
+01E9 5005            121                              JNC NEXT_52
+01EB 757415          122                              MOV 74H,#15H
+01EE 8012            123                              SJMP BYTE_6
+A51 MACRO ASSEMBLER  QUATISATION                                                          06/07/2023 00:01:47 PAGE     3
+
+01F0                 124                              NEXT_52:
+01F0 C3              125                                 CLR C
+01F1 E564            126                                     MOV A,64H
+01F3 9429            127                                     SUBB A,#29H
+01F5 5005            128                                     JNC NEXT_53
+01F7 757425          129                                     MOV 74H,#25H
+01FA 8006            130                                     SJMP BYTE_6
+01FC                 131                                     NEXT_53:
+01FC C3              132                                        CLR C
+01FD 757435          133                                        MOV 74H,#35H
+0200 8000            134                                        SJMP BYTE_6
+0202                 135                BYTE_6:      
+0202 E565            136               MOV A,65H
+0204 C3              137                   CLR C
+0205 9409            138                       SUBB A,#09H
+0207 5005            139                       JNC NEXT_61
+0209 757515          140                       MOV 75H,#15H
+020C 801E            141                       SJMP BYTE_7
+020E                 142                       NEXT_61:
+020E C3              143                          CLR C
+020F E565            144                              MOV A,65H
+0211 9419            145                              SUBB A,#19H
+0213 5005            146                              JNC NEXT_62
+0215 757515          147                              MOV 75H,#15H
+0218 8012            148                              SJMP BYTE_7
+021A                 149                              NEXT_62:
+021A C3              150                                 CLR C
+021B E565            151                                     MOV A,65H
+021D 9429            152                                     SUBB A,#29H
+021F 5005            153                                     JNC NEXT_63
+0221 757525          154                                     MOV 75H,#25H
+0224 8006            155                                     SJMP BYTE_7
+0226                 156                                     NEXT_63:
+0226 C3              157                                        CLR C
+0227 757535          158                                        MOV 75H,#35H
+022A 8000            159                                        SJMP BYTE_7
+022C                 160                  BYTE_7:    
+022C E566            161               MOV A,66H
+022E C3              162                   CLR C
+022F 9409            163                       SUBB A,#09H
+0231 5005            164                       JNC NEXT_71
+0233 757615          165                       MOV 76H,#15H
+0236 801E            166                       SJMP BYTE_8
+0238                 167                       NEXT_71:
+0238 C3              168                          CLR C
+0239 E566            169                              MOV A,66H
+023B 9419            170                              SUBB A,#19H
+023D 5005            171                              JNC NEXT_72
+023F 757615          172                              MOV 76H,#15H
+0242 8012            173                              SJMP BYTE_8
+0244                 174                              NEXT_72:
+0244 C3              175                                 CLR C
+0245 E566            176                                     MOV A,66H
+0247 9429            177                                     SUBB A,#29H
+0249 5005            178                                     JNC NEXT_73
+024B 757625          179                                     MOV 76H,#25H
+024E 8006            180                                     SJMP BYTE_8
+0250                 181                                     NEXT_73:
+0250 C3              182                                        CLR C
+0251 757635          183                                        MOV 76H,#35H
+0254 8000            184                                        SJMP BYTE_8
+0256                 185                BYTE_8:      
+0256 E567            186               MOV A,67H
+0258 C3              187                   CLR C
+0259 9409            188                       SUBB A,#09H
+025B 5004            189                       JNC NEXT_81
+A51 MACRO ASSEMBLER  QUATISATION                                                          06/07/2023 00:01:47 PAGE     4
+
+025D 757715          190                       MOV 77H,#15H
+0260 22              191                       RET
+0261                 192                       NEXT_81:
+0261 C3              193                          CLR C
+0262 E567            194                              MOV A,67H
+0264 9419            195                              SUBB A,#19H
+0266 5004            196                              JNC NEXT_82
+0268 757715          197                              MOV 77H,#15H
+026B 22              198                              RET
+026C                 199                              NEXT_82:
+026C C3              200                                 CLR C
+026D E567            201                                     MOV A,67H
+026F 9429            202                                     SUBB A,#29H
+0271 5004            203                                     JNC NEXT_83
+0273 757725          204                                     MOV 77H,#25H
+0276 22              205                                     RET
+0277                 206                                     NEXT_83:
+0277 C3              207                                        CLR C
+0278 757735          208                                        MOV 77H,#35H
+027B 22              209     RET
+                     210     END
+A51 MACRO ASSEMBLER  QUATISATION                                                          06/07/2023 00:01:47 PAGE     5
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BYTE_1 . . . . . .  C ADDR   0130H   A   
+BYTE_2 . . . . . .  C ADDR   015AH   A   
+BYTE_3 . . . . . .  C ADDR   0184H   A   
+BYTE_4 . . . . . .  C ADDR   01AEH   A   
+BYTE_5 . . . . . .  C ADDR   01D8H   A   
+BYTE_6 . . . . . .  C ADDR   0202H   A   
+BYTE_7 . . . . . .  C ADDR   022CH   A   
+BYTE_8 . . . . . .  C ADDR   0256H   A   
+HERE . . . . . . .  C ADDR   0102H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+NEXT_11. . . . . .  C ADDR   013CH   A   
+NEXT_12. . . . . .  C ADDR   0148H   A   
+NEXT_13. . . . . .  C ADDR   0154H   A   
+NEXT_21. . . . . .  C ADDR   0166H   A   
+NEXT_22. . . . . .  C ADDR   0172H   A   
+NEXT_23. . . . . .  C ADDR   017EH   A   
+NEXT_31. . . . . .  C ADDR   0190H   A   
+NEXT_32. . . . . .  C ADDR   019CH   A   
+NEXT_33. . . . . .  C ADDR   01A8H   A   
+NEXT_41. . . . . .  C ADDR   01BAH   A   
+NEXT_42. . . . . .  C ADDR   01C6H   A   
+NEXT_43. . . . . .  C ADDR   01D2H   A   
+NEXT_51. . . . . .  C ADDR   01E4H   A   
+NEXT_52. . . . . .  C ADDR   01F0H   A   
+NEXT_53. . . . . .  C ADDR   01FCH   A   
+NEXT_61. . . . . .  C ADDR   020EH   A   
+NEXT_62. . . . . .  C ADDR   021AH   A   
+NEXT_63. . . . . .  C ADDR   0226H   A   
+NEXT_71. . . . . .  C ADDR   0238H   A   
+NEXT_72. . . . . .  C ADDR   0244H   A   
+NEXT_73. . . . . .  C ADDR   0250H   A   
+NEXT_81. . . . . .  C ADDR   0261H   A   
+NEXT_82. . . . . .  C ADDR   026CH   A   
+NEXT_83. . . . . .  C ADDR   0277H   A   
+QUANT. . . . . . .  C ADDR   0130H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
